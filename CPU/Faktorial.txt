@@ -1,0 +1,24 @@
+PUSH 10
+POPR AX
+PUSH 1
+POPR BX
+CALL 1
+OUT
+END
+
+:1
+    PUSHR AX
+    PUSHR BX
+    MUL
+    POPR BX
+    PUSHR AX
+    PUSH -1
+    ADD
+    POPR AX
+    PUSHR BX
+    PUSHR AX
+    PUSH 1
+    JNE
+        CALL 1
+    PUSHR BX
+RET
